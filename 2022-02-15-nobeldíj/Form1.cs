@@ -16,5 +16,30 @@ namespace _2022_02_15_nobeldíj
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Mentés_Click(object sender, EventArgs e)
+        {
+            //Ellenőrzések
+            //8.b
+            if (textBox1.Text=="" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "")
+            {
+                MessageBox.Show("Töltsön ki minden mezőt!");
+                return;
+            }
+
+            //8.c
+            if (!int.TryParse(textBox1.Text, out int év) || év<1989)
+            {
+                MessageBox.Show("Hiba! Az évszám nem megfelelő!");
+                return;
+            }
+            //Mentés
+            
+        }
     }
 }
