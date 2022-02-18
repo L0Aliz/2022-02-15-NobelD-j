@@ -40,9 +40,18 @@ namespace _2022_02_15_nobeldíj
                 return;
             }
             //Mentés
-            StreamWriter sw = new StreamWriter("uj_dijazott.txt");
-            sw.WriteLine("Év;Név;SzületésHalálozás;Országkód");
-            sw.Close();
+            try
+            {
+                StreamWriter sw = new StreamWriter("uj_dijazott.txt");
+                sw.WriteLine("Év;Név;SzületésHalálozás;Országkód");
+                sw.WriteLine(textBox1.Text + ";" + textBox2.Text + ";" + textBox3.Text + ";" + textBox4.Text);
+                sw.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show($"Hiba az állomány írásánál!\n{ex.Message}");
+            }
+            
         }
     }
 }
